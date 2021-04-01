@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { useContext } from 'react'
+import Child from './Child'
+import { GlobalProvider } from './Store/GlobalState'
+import User_Render from './User_Render'
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider >
+      <div className="App">
+
+        <Child />
+        <User_Render/>
+
+      </div>
+    </GlobalProvider >
   );
 }
 
